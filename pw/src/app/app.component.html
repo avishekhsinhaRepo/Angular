@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <h1>Password Generator</h1>
+      <hr/>
+      <input type="text" class="form-control" (input)="onChangeLength($event)" />
+    </div>
+
+    <div class="row checkbox">
+      <label for="useNum"><input type="checkbox" id="useNum" (change)="onChangeUseNumers()" /> Use Numbers</label>
+    </div>
+    <div class="row checkbox">
+      <label for="useLet"><input type="checkbox" id="useLet" (change)="onChangeUseLetters()" /> Use Letters</label>
+    </div>
+    <div class="row checkbox">
+      <label for="useSym"><input type="checkbox" id="useSym" (change)="onChangeUseSymbols()" /> Use Symbols</label>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary" (click)="onButtonClick()" [disabled]="!(inputLength && (includeNumbers || includeLetters || includeSymbols))">Generate
+        Password
+      </button>
+    </div>
+    <div class="row" *ngIf="password">
+      <p>Password</p>
+      <input type="text" class="form-control" [value]=password />
+    </div>
+  </div>
+</body>
+
+</html>
