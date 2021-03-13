@@ -1,0 +1,7 @@
+<div class="columns">
+  <div class="column" *ngFor="let post of posts">
+    <app-card [imageUrl]="post.imageUrl" [title]="post.title" [userName]="post.userName" [content]="post.content">
+    </app-card>
+  </div>
+
+</div>
