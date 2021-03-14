@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="recieverName">Reciever Name</label>
+          <input type="text" class="form-control" name="recieverName" (input)="onNameChange($event.target.value)" />
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label>Reciever Name</label>
+          <div class="row">
+            {{recieverName| titlecase }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="pdate">Payment Date</label>
+          <input type="date" class="form-control" id="pdate" (change)="onDateChange($event.target.value)" />
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label>Payment Date</label>
+          <div class="row">
+            {{date|date:'longDate'}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <input type="text" class="form-control" id="amount" (input)="onAmountChange($event.target.value)" />
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label>Amount</label>
+          <div class="row">
+            {{amount |currency }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
