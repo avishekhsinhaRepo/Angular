@@ -1,0 +1,16 @@
+<div class="form-group">
+    <label for="studentName">Name:</label>
+    <input type="text" class="form-control" id="studentName" #studentName>
+</div>
+<div class="form-group">
+    <label for="sel1">Status</label>
+    <select class="form-control" id="sel1" #status>
+        <option>Active</option>
+        <option>Inactive</option>
+    </select>
+</div>
+<div class="alert alert-success">
+    {{message}}
+</div>
+
+<button type="button" class="btn btn-primary" (click)="addStudent(studentName.value,status.value)">Add</button>
