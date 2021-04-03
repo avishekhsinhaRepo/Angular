@@ -8,14 +8,16 @@ import { StudentsListComponent } from './students-list/students-list.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'home-v2', component: HomeComponent },
   { path: 'studentlist', component: StudentsListComponent },
   { path: 'students/:id', component: StudentDetailComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
-})],
+    initialNavigation: 'enabled',
+    relativeLinkResolution: 'legacy'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
