@@ -1,17 +1,13 @@
 <div class="row">
   <div class="col-xs-12 col-sm-4">
     <div class="list-group">
-      <a
-        href="#"
-        class="list-group-item"
-        *ngFor="let user of users">
+      <a class="list-group-item" *ngFor="let user of users;let id = index" [routerLink]="['/users',id,user.name]" [queryParams]={admin:true,hasAccess:true}
+        fragment="loading">
         {{ user.name }}
       </a>
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
-    <app-user></app-user>
+    <router-outlet></router-outlet>
   </div>
 </div>
-
-
