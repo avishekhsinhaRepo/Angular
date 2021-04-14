@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { StudentsListComponent } from './students-list/students-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { StudentsListComponent } from './students-list/students-list.component';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

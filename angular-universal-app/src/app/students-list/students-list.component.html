@@ -1,14 +1,9 @@
 <div class="columns">
-    <div class="column is-one-fifth" *ngFor="let student of studentList;let studentid =index ">
-        <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img [src]="student.profileImage" alt="Placeholder image">
-                </figure>
-            </div>
-            <div class="card-content">
-                <a [routerLink]="['/students',studentid+1]">{{student.firstName}}</a>
-            </div>
-        </div>
+    <div class="row">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let student of studentList">
+                <a [routerLink]="['/students',student.id]">{{student.name}}</a>
+            </li>
+        </ul>
     </div>
 </div>
