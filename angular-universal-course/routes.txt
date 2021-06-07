@@ -1,0 +1,2 @@
+/courses/01
+/courses/02
